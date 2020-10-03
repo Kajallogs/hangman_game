@@ -1,0 +1,165 @@
+import random
+name=input("What is your name :-")
+print("Good Luck!",name)
+data=['Innovation','Experience','Rainbow','Computer','Engineering','Mathematics']
+word=random.choice(data)
+print("guess the word :-")
+guesses=''
+turns=12
+while turns>0:
+    
+    failed=0
+    
+    
+    
+    for char in word:
+        if char in guesses:
+            print(char)
+        else:
+            
+            print("-")
+            
+            failed+=1
+            
+    if failed==0:
+   
+        print("!*! YOU WIN !*!")
+        print("The word is:",word)
+        break
+    guess=input("guess a character :- ")
+    
+    guesses+=guess
+    
+    if guess not in word:
+        turns-=1
+        print("wrong")
+        print("You have",+turns,'more guesses')
+        if turns==0:
+            print("!*! YOU LOOSE !*!")
+            
+Output :
+  
+What is your name :-Kajal
+Good Luck! Kajal
+guess the word :-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+guess a character :- M
+M
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+guess a character :- a
+M
+a
+-
+-
+-
+-
+a
+-
+-
+-
+-
+guess a character :- s
+M
+a
+-
+-
+-
+-
+a
+-
+-
+-
+s
+guess a character :- t
+M
+a
+t
+-
+-
+-
+a
+t
+-
+-
+s
+guess a character :- h
+M
+a
+t
+h
+-
+-
+a
+t
+-
+-
+s
+guess a character :- m
+M
+a
+t
+h
+-
+m
+a
+t
+-
+-
+s
+guess a character :- i
+M
+a
+t
+h
+-
+m
+a
+t
+i
+-
+s
+guess a character :- e
+M
+a
+t
+h
+e
+m
+a
+t
+i
+-
+s
+guess a character :- c
+M
+a
+t
+h
+e
+m
+a
+t
+i
+c
+s
+!*! YOU WIN !*!
+The word is: Mathematics
